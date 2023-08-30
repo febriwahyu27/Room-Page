@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes nav-down{
+    from {top: -100px;}
+    to {top: 0;}
+}
+@keyframes nav-up{
+    from {top: 0;}
+    to {top: -100px;}
+}
+
+/* NAVBAR */
+.nav-mobile{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 2;
+    top: -100px;
+    width: 100%;
+    padding: 35px 35px;
+    animation-duration: .5s;
+    filter: brightness(100%);
+    background-color: white;
+}
+.nav-mobile ul{
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+}
+.nav-mobile ul li{
+    list-style: none;
+}
+.nav-mobile ul li a{
+    text-decoration: none;
+    color: black;
+}
+.nav-mobile .close:hover{
+    cursor: pointer;
+}
+
+nav{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    grid-area: navbar;
+    margin: 25px 0 0 0;
+    padding: 25px 60px;
+}
+nav .humberger{
+    display: none;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+    margin: -5px 0 0 20px;
+    width: 300px;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+/* END NAVBAR */
+
+/* SECTION */
+section{
+    display: grid;
+    grid-template-areas: 'swiper swiper swiper caption caption caption'
+    'about about about about about about';
+    top: 0;
+    width: 100%;
+    padding-bottom: 0;
+    margin: 0 !important;
+}
+section .slider-container {
+    grid-area: swiper;
+    overflow: hidden;
+    padding-bottom: -10px !important;
+    margin-bottom: -10px !important;
+}
+section .slider-container .slider {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+section .slider-container .slider .slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+section .slider-container .slider .slide img{
+    width: 100%;
+}
+
+/* CAPTION SWIPER */
+section .caption-slider{
+    grid-area: caption;
+    max-width: 840px;
+    height: 492px;
+    overflow: hidden;
+    padding: 0 !important;
+}
+section .caption-slider .slide-caption{
+    position: relative;
+    width: 100%;
+    height: 430px;
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+section .swiper-slide{
+    text-align: left;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 100%;
+    min-width: 100%;
+    overflow: hidden;
+}
+section .caption-slider .swiper-slide h1{
+    width: 100%;
+    padding: 0 190px 0 100px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0 0 20px 0;
+}
+section .caption-slider .swiper-slide p{
+    padding: 0 120px 0 100px;
+    font-family: 'League Spartan', sans-serif;
+    color: hsl(0, 0%, 63%);
+    font-size: 18px;
+}
+section .caption-slider .swiper-slide a{
+    width: 100%;
+    padding: 0 120px 0 100px;
+    margin: 20px 0 0 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 12px;
+    font-weight: 600;
+    color: hsl(0, 0%, 0%);
+    font-size: 15px;
+    font-family: 'League Spartan', sans-serif;
+}
+section .caption-slider .swiper-slide a:hover{
+    color: hsl(0, 0%, 63%);
+}
+section .caption-slider .btn-swipe{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+}
+section .caption-slider .btn-swipe > div{
+    padding: 15px 25px;
+    background-color: hsl(0, 0%, 0%);
+}
+section .caption-slider .btn-swipe div:hover{
+    cursor: pointer;
+    background-color: hsl(0, 0%, 27%);
+}
+/* END CAPTION CAPTION SWIPER */
+
+/* SECTION ABOUT */
+section .about{
+    grid-area: about;
+    display: flex;
+    justify-content: space-between;
+}
+section .about .about-text{
+    padding: 60px 40px;
+    font-family: 'League Spartan', sans-serif;
+}
+section .about .about-text h1{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 8px;
+    margin: 0 0 20px 0;
+}
+section .about .about-text p{
+    color: hsl(0, 0%, 63%);
+}
+/* END */
+
+/* END SECTION */
+
+/* FOOTER */
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    background-color: hsla(0, 0%, 63%, 0.463);
+}
+
+/* MOBILE */
+@media screen and (max-width: 900px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .nav-mobile ul li a:hover{
+        color: hsl(0, 0%, 63%);
+    }
+
+    nav{
+        width: 100%;
+        margin: 0;
+        padding: 35px 35px;
+    }
+    nav .humberger{
+        display: block;
+    }
+    nav .humberger:hover{
+        cursor: pointer;
+    }
+    nav svg{
+        margin: 0 auto;
+    }
+    nav ul{
+        display: none;
+    }
+
+    section{
+        display: grid;
+        grid-template-areas: 'swiper swiper swiper swiper swiper swiper'
+        'caption caption caption caption caption caption'
+        'about about about about about about';
+        /* position: absolute; */
+        right: 0;
+        top: 0;
+        width: 100% !important;
+        padding-bottom: 0;
+        margin: 0 !important;
+    }
+    section .slider-container {
+        grid-area: swiper;
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: -10px !important;
+        margin-bottom: -10px !important;
+    }
+    section .slider-container .slider {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+    }
+    section .slider-container .slider .slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+        height: fit-content;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+    section .slider-container .slider .slide img{
+        width: 100%;
+        height: 360px;
+    }
+
+    /* CAPTION SWIPER */
+    section .caption-slider{
+        grid-area: caption;
+        max-width: 840px;
+        height: 492px;
+        overflow: hidden;
+        padding: 0 !important;
+    }
+    section .caption-slider .slide-caption{
+        position: relative;
+        width: 100%;
+        height: 430px;
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+    }
+    section .swiper-slide{
+        text-align: left;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex: 0 0 100%;
+        min-width: 100%;
+        overflow: hidden;
+    }
+    section .caption-slider .swiper-slide h1{
+        width: 100%;
+        padding: 0 60px;
+        font-family: 'League Spartan', sans-serif;
+        font-weight: 600;
+        font-size: 40px;
+        margin: 0 0 20px 0;
+    }
+    section .caption-slider .swiper-slide p{
+        padding: 0 60px;
+        font-family: 'League Spartan', sans-serif;
+        color: hsl(0, 0%, 63%);
+        font-size: 20px;
+    }
+    section .caption-slider .swiper-slide a{
+        width: 100%;
+        padding: 0 60px;
+        margin: 20px 0 0 0;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 12px;
+        font-weight: 600;
+        color: hsl(0, 0%, 0%);
+        font-size: 15px;
+        font-family: 'League Spartan', sans-serif;
+    }
+    section .caption-slider .swiper-slide a:hover{
+        color: hsl(0, 0%, 63%);
+    }
+    section .caption-slider .btn-swipe{
+        position: absolute;
+        top: 296px;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        width: fit-content;
+    }
+    section .caption-slider .btn-swipe > div{
+        padding: 15px 25px;
+        background-color: hsl(0, 0%, 0%);
+    }
+    section .caption-slider .btn-swipe div:hover{
+        cursor: pointer;
+        background-color: hsl(0, 0%, 27%);
+    }
+    /* END CAPTION CAPTION SWIPER */
+
+    section .about{
+        grid-area: about;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    section .about .about-text{
+        padding: 60px 40px;
+        font-family: 'League Spartan', sans-serif;
+    }
+    section .about .img-about img{
+        width: 100%;
+    }
+
+    /* FOOTER */
+    footer{
+        position: relative;
+        width: 100%;
+        margin: 40px 0 0 0;
+    }
+    footer a{
+        text-decoration: none;
+    }
+    /* END */
+}
